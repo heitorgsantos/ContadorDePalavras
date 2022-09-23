@@ -61,30 +61,33 @@ function iniciaCronometro() {
 function placar() {
   let tablePlacar = $("#placar").find("tbody");
   let numPalavras = $("#palavras").text();
-  let nome = "Heitor";
-  let buttonRemove = "<a href='#'><i class='small material-icons'>delete</i></a>"
-
-  let linha = "<tr>" +
-                "<td>" + nome + "</td>" +
-                "<td>" + numPalavras + "</td>" +
-                "<td>" + buttonRemove + "</td>" +
-              "</tr>";
+  let usuario = "Heitor";
+  let linha = novaLinha(usuario, numPalavras);
+  linha.find(".botao-remover").click(remover);
   tablePlacar.prepend(linha);
 }
 
-$(".botao-remover").click(function(event) {
+function novaLinha(usuario, numPalavras) {
+  let linha = $("<tr>");
+  let colunaUsuario = $("<td>").text(usuario);
+  let colunaPalavras = $("<td>").text(numPalavras);
+  let colunaRemover = $("<td>");
+  let link = $("<a>").addClass("botao-remover").attr("href", "#");
+  let icone = $("<i>")
+    .addClass("small")
+    .addClass("material-icons")
+    .text("delete");
+  link.append(icone);
+  colunaRemover.append(link);
+  linha.append(colunaUsuario);
+  linha.append(colunaPalavras);
+  linha.append(colunaRemover);
+  return linha;
+}
+
+function remover(event) {
   event.preventDefault();
   $(this).parent().parent().remove();
-})
-
-
-function novaLinha() {
-  let containerMain = $("<tr>");
-  let nome = $("<td>");
-  let corpo = $("#t-body");
-  $()
-
-
 }
 
 function restart() {
