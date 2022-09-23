@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contador de Palavras</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="stylesheet" href="css/libs/materialize.min.css" />
+    <link rel="stylesheet" href="css/libs/google-fonts.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="center">Contador de Palavras</h1>
+      <p class="frase center">Heitor Gomes dos Santos</p>
+      <ul class="center frases">
+        <li><span id="tamanho-frase">40</span> palvras</li>
+        <li><span id="segundos">5</span> segundos</li>
+      </ul>
+      <textarea name="text" id="campo-digitacao" cols="40" rows="10"></textarea>
+
+      <div>
+        <a
+          id="restart"
+          class="btn-floating btn-large waves-effect waves-light red"
+          ><i class="material-icons">refresh</i></a
+        >
+      </div>
+
+      <ul>
+        <li class="center"><span id="caracteres">0 </span> caracteres</li>
+        <li class="center"><span id="palavras">0 </span> palavras</li>
+      </ul>
+
+      <section id="placar">
+        <h3 class="center">Placar</h3>
+        <table class="centered bordered">
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th>Palavras</th>
+              <th>Remover</th>
+            </tr>
+          </thead>
+
+          <tbody id="t-body">
+            <tr id="container-main">
+              <td>Heitor</td>
+              <td>6</td>
+              <td>
+                <a href="#" class="botao-remover"><i class="material-icons">delete</i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
