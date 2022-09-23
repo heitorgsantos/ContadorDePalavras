@@ -63,8 +63,8 @@ function placar() {
   let numPalavras = $("#palavras").text();
   let usuario = "Heitor";
   let linha = novaLinha(usuario, numPalavras);
-  linha.find(".botao-remover").click(remover);
-  tablePlacar.prepend(linha);
+  linha.find(".botao-remover").on("click", remover);
+  tablePlacar.append(linha);
 }
 
 function novaLinha(usuario, numPalavras) {
